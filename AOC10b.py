@@ -71,16 +71,13 @@ while True:
         if (i,j-1) not in visited:
             pending.append((i,j-1))
 
-visited.sort()
 count = 0
 mark = ""
 
 for i in range(len(map)):
-    
     included = False
     for j in range(len(map[i])):
         if (i,j) in visited or map[i][j] == "S":
-            ## TUNNEL PART FOUND ##
             if map[i][j] == "|":
                 if included:
                     included = False
