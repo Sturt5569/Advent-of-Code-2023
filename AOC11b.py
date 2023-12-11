@@ -1,7 +1,6 @@
 file = open('Advent of Code 2023/aoc 11 input.txt')
 lines = file.readlines()
 
-## ------ Add extra rows where no galaxies exist ------ ## 
 blankrows = []
 
 for i in range(len(lines)):
@@ -16,7 +15,6 @@ for i in range(len(lines[0])):
 for i in range(len(blankrows)):
     lines[blankrows[i]] = blankline
 
-## ------ Add extra columns where no galaxies exist ------ ##
 blankcolumns = []
 for i in range(len(lines[0])):
     blank = True
@@ -34,7 +32,6 @@ for i in range(len(lines)):
         newline = lstart + "X" + lend
         lines[i] = newline
 
-## ------ Get node position and determine distances ------ ##
 nodes = []
 
 for i in range(len(lines)):
@@ -71,7 +68,5 @@ for start in nodes:
                     xsteps += m
             path = yshift + xshift + xsteps
         totalsteps += path
-
-
 
 print(totalsteps/2)
