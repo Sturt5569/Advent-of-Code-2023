@@ -6,14 +6,14 @@ pos = [1,1]
 visited = [(1,1)]
 path = 1
 
-def area(coords):
-    t = 0
-    for count in range(len(coords)-1):
-        y = coords[count+1][1] + coords[count][1]
-        x = coords[count+1][0] - coords[count][0]
+def area(nodes):
+    total = 0
+    for node in range(len(nodes)-1):
+        x = nodes[node+1][0] - nodes[node][0]
+        y = nodes[node+1][1] + nodes[node][1]
         z = y*x
-        t += z
-    return abs(t/2)  
+        total += z
+    return abs(total/2)   
 
 for li in lines:
     line = li.split()
